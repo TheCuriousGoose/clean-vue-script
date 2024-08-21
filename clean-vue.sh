@@ -59,27 +59,29 @@ EOL
 echo "Resetting App.vue..."
 cat > src/App.vue <<EOL
 <script setup>
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Brand</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link active" to="/">Home</router-link>
+              <RouterLink class="nav-link active" to="/">Home</RouterLink>
             </li>
-            <!-- Add more nav items here -->
+
           </ul>
         </div>
       </div>
     </nav>
-    <router-view></router-view>
+    <RouterView></RouterView>
   </div>
 </template>
 EOL
